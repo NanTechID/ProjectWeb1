@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Layout dengan Flexbox</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-family: Arial, sans-serif;
+    }
+    header, footer {
+      background: navy;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .main {
+      display: flex;
+      flex: 1 1 auto;
+      min-height: 0;
+    }
+    nav {
+      flex: 1;
+      background: lightblue;
+      padding: 20px;
+      min-width: 0;
+    }
+    article {
+      flex: 3;
+      background: #f0f0f0;
+      padding: 20px;
+      min-width: 0;
+    }
+
+   .pertemuan-buttons {
+  display: flex;            /* Aktifkan flexbox */
+  flex-wrap: wrap;          /* Membungkus tombol jika ruang tidak cukup */
+  gap: 16px;                /* Jarak antar tombol */
+  margin-top: 32px;
+  justify-content: flex-start; /* Bisa diganti center atau space-around jika mau */
+}
+
+.btn-pertemuan {
+  flex: 1 1 150px;          /* Fleksibel, minimum 150px */
+  max-width: 200px;         /* Bisa disesuaikan */
+  background: linear-gradient(90deg, #0c73da 0%, #2c3e50 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  outline: none;
+  letter-spacing: 0.5px;
+}
+
+.btn-pertemuan:hover, .btn-pertemuan:focus {
+  background: linear-gradient(90deg, #1abc9c 0%, #0c73da 100%);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 16px rgba(44,62,80,0.13);
+}
+
+@media (max-width: 700px) {
+  .pertemuan-buttons {
+    flex-direction: column; /* Tombol akan stack di layar kecil */
+    gap: 12px;
+  }
+  .btn-pertemuan {
+    flex: 1 1 auto;        /* Ambil full width */
+    width: 100%;
+    padding: 14px 0;
+    font-size: 1rem;
+  }
+}
+
+    aside {
+      flex: 1;
+      background: lightgreen;
+      padding: 20px;
+      min-width: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Universitas Al-Khairiyah</h1>
+  </header>
+  
+  <div class="main">
+    <nav>Menu</nav>
+    <article>
+      <h2>Konten Utama</h2>
+       <div class="pertemuan-buttons">
+      <button class="btn-pertemuan" onclick="location.href='index.html'">Pertemuan 1</button>
+      <button class="btn-pertemuan" onclick="location.href='tugas1.html'">Pertemuan 2</button>
+      <button class="btn-pertemuan" onclick="location.href='pertemuan3.html'">Pertemuan 3</button>
+      <button class="btn-pertemuan" onclick="location.href='pertemuan4.html'">Pertemuan 4</button>
+      <button class="btn-pertemuan" onclick="location.href='pertemuan5.html'">Pertemuan 5</button>
+      <button class="btn-pertemuan" onclick="location.href='pertemuan6.html'">Pertemuan 6</button>
+      </div>
+
+    </article>
+    <aside>Sidebar</aside>
+  </div>
+  
+  <footer>
+    &copy; 2025 Website Saya
+  </footer>
+</body>
+</html>

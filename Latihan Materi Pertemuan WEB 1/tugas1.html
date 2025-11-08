@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Mahasiswa</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styletugas1.css">
+</head>
+<body>
+
+  <header>
+    <h1>Portal Mahasiswa - NanTech.ID</h1>
+    <p>Selamat datang di portal resmi kegiatan kampus</p>
+  </header>
+
+  <nav>
+    <button class="home-button"
+ 	 onclick="window.location.href='index.html'">
+ 	 <i class="fa fa-home"></i></button>
+    <a href="#biodata">Biodata</a>
+    <a href="#formulir">Formulir</a>
+    <a href="#media">Media</a>
+  </nav>
+
+  <main>
+
+    <!-- Biodata Mahasiswa -->
+    <section id="biodata">
+      <h2>Tabel Biodata Mahasiswa - NanTech.ID</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Nama</th>
+            <th>NIM</th>
+            <th>Jurusan</th>
+            <th>Semester</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ahmad Fauzi</td>
+            <td>210101001</td>
+            <td>Informatika</td>
+            <td>5</td>
+            <td>ahmad@mail.com</td>
+          </tr>
+          <tr>
+            <td>Rina Ayu</td>
+            <td>210101002</td>
+            <td>Sistem Informasi</td>
+            <td>3</td>
+            <td>rina@mail.com</td>
+          </tr>
+          <tr>
+            <td>Budi Santoso</td>
+            <td>210101003</td>
+            <td>Teknik Elektro</td>
+            <td>7</td>
+            <td>budi@mail.com</td>
+          </tr>
+          <tr>
+            <td>Lestari Dewi</td>
+            <td>210101004</td>
+            <td>Manajemen</td>
+            <td>5</td>
+            <td>lestari@mail.com</td>
+          </tr>
+          <tr>
+            <td>Joko Prabowo</td>
+            <td>210101005</td>
+            <td>Akuntansi</td>
+            <td>1</td>
+            <td>joko@mail.com</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Formulir Pendaftaran -->
+    <section id="formulir">
+      <h2>Formulir Pendaftaran Kegiatan</h2>
+      <form>
+        <label for="nama">Nama Lengkap</label>
+        <input type="text" id="nama" name="nama" required>
+
+        <label for="nim">NIM</label>
+        <input type="text" id="nim" name="nim" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+
+        <label>Jenis Kelamin</label>
+        <input type="radio" id="pria" name="gender" value="Pria">
+        <label for="pria">Pria</label>
+        <input type="radio" id="wanita" name="gender" value="Wanita">
+        <label for="wanita">Wanita</label>
+
+        <label>Minat Kegiatan</label>
+        <input type="checkbox" id="olahraga" name="minat" value="Olahraga">
+        <label for="olahraga">Olahraga</label>
+        <input type="checkbox" id="seni" name="minat" value="Seni">
+        <label for="seni">Seni</label>
+        <input type="checkbox" id="ilmiah" name="minat" value="Ilmiah">
+        <label for="ilmiah">Ilmiah</label>
+
+        <label for="jurusan">Pilih Jurusan</label>
+        <select id="jurusan" name="jurusan">
+          <option value="Informatika">Informatika</option>
+          <option value="Sistem Informasi">Sistem Informasi</option>
+          <option value="Teknik Elektro">Teknik Elektro</option>
+          <option value="Manajemen">Manajemen</option>
+          <option value="Akuntansi">Akuntansi</option>
+        </select>
+
+        <label for="alasan">Alasan Mengikuti Kegiatan</label>
+        <textarea id="alasan" name="alasan" rows="4" placeholder="Tuliskan alasanmu..."></textarea>
+
+        <button type="submit">Daftar</button>
+      </form>
+    </section>
+
+    <!-- Media -->
+    <section id="media">
+      <h2>Media</h2>
+      <article>
+        <h3>Audio Kampus</h3>
+        <audio controls>
+          <source src="audio.mp3" type="audio/mpeg">
+          Browser Anda tidak mendukung audio.
+        </audio>
+      </article>
+
+      <article>
+        <h3>Video Kegiatan</h3>
+        <video width="100%" controls>
+          <source src="video.mp4" type="video/mp4">
+          Browser Anda tidak mendukung video.
+        </video>
+      </article>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Portal Mahasiswa Universitas Nantech.ID. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

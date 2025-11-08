@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selamat Datang - My Portfolio</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+    section {
+      padding: 100px 0;
+      min-height: 100vh;
+    }
+    .navbar-nav .nav-link {
+      cursor: pointer;
+    }
+    .portfolio-img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .profile-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 4px solid #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
+  <!-- NAVBAR -->
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#">My Porto</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#profile">Profile</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HOME SECTION -->
+  <section id="home" class="bg-primary text-white text-center d-flex flex-column justify-content-center align-items-center">
+    <div class="container">
+      <img src="https://via.placeholder.com/180" alt="Foto Profil" class="profile-photo">
+      <h1 class="fw-bold mt-3">Welcome to My Portfolio</h1>
+      <p class="lead">Showcasing My Work, Skills, and Achievements</p>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO SECTION -->
+  <section id="portfolio" class="bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">My Portfolio</h2>
+        <p>Beberapa karya dan foto proyek yang pernah saya kerjakan</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e" class="portfolio-img" alt="Project 1">
+            <div class="card-body text-center">
+              <h5 class="card-title">Desain Website</h5>
+              <p class="card-text">Proyek pembuatan website company profile modern dan responsif.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" class="portfolio-img" alt="Project 2">
+            <div class="card-body text-center">
+              <h5 class="card-title">Fotografi Potret</h5>
+              <p class="card-text">Pemotretan profesional dengan teknik pencahayaan natural.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68" class="portfolio-img" alt="Project 3">
+            <div class="card-body text-center">
+              <h5 class="card-title">UI/UX Design</h5>
+              <p class="card-text">Desain antarmuka aplikasi mobile dengan pendekatan user-centered.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFILE SECTION -->
+  <section id="profile" class="bg-light d-flex justify-content-center align-items-center">
+    <div class="text-center">
+      <h2>About Me</h2>
+      <p>Introduce yourself, your background, and your interests here.</p>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE SECTION -->
+  <section id="experience" class="bg-secondary text-white d-flex justify-content-center align-items-center">
+    <div class="container text-center">
+      <h2>My Experience</h2>
+      <div class="row">
+        <!-- Job 1 -->
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Software Developer
+                <button class="btn btn-primary btn-sm ms-2" onclick="toggleContent(1)">Show</button>
+              </h5>
+              <h6 class="card-subtitle mb-2 text-muted" id="subtitle-1" style="display:none;">ABC Tech Solutions, 2020-2023</h6>
+              <p class="card-text" id="text-1" style="display:none;">
+                Developed and maintained web applications using modern frameworks like React and Node.js. Collaborated with cross-functional teams to deliver high-quality products, improving customer satisfaction by 30%.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Data Analyst
+                <button class="btn btn-primary btn-sm ms-2" onclick="toggleContent(2)">Show</button>
+              </h5>
+              <h6 class="card-subtitle mb-2 text-muted" id="subtitle-2" style="display:none;">XYZ Analytics, 2018-2020</h6>
+              <p class="card-text" id="text-2" style="display:none;">
+                Conducted data analysis and prepared reports using Python and SQL. Successfully identified patterns and insights that led to a 20% increase in operational efficiency for clients.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Job 3 -->
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Marketing Intern
+                <button class="btn btn-primary btn-sm ms-2" onclick="toggleContent(3)">Show</button>
+              </h5>
+              <h6 class="card-subtitle mb-2 text-muted" id="subtitle-3" style="display:none;">DigitalMedia Inc, 2017-2018</h6>
+              <p class="card-text" id="text-3" style="display:none;">
+                Assisted in planning and executing digital marketing campaigns, resulting in a 15% increase in online engagement. Managed social media accounts and monitored key performance metrics.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 4 -->
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Freelance Web Developer
+                <button class="btn btn-primary btn-sm ms-2" onclick="toggleContent(4)">Show</button>
+              </h5>
+              <h6 class="card-subtitle mb-2 text-muted" id="subtitle-4" style="display:none;">2015-2017</h6>
+              <p class="card-text" id="text-4" style="display:none;">
+                Worked with small businesses to create responsive websites, helping them establish an online presence. Delivered projects on time and maintained a 95% client satisfaction rate.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION SECTION -->
+  <section id="education" class="bg-light d-flex justify-content-center align-items-center">
+    <div class="text-center">
+      <h2>My Education</h2>
+      <p>List your academic qualifications and educational background here.</p>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS SECTION -->
+  <section id="achievements" class="bg-success text-white d-flex justify-content-center align-items-center">
+    <div class="text-center">
+      <h2>My Achievements</h2>
+      <p>Showcase your awards, certificates, and other achievements here.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-white text-center p-3 mt-5">
+    © 2025 MyPorto.com — All Rights Reserved
+  </footer>
+
+  <script>
+    function toggleContent(id) {
+      const subtitle = document.getElementById(`subtitle-${id}`);
+      const text = document.getElementById(`text-${id}`);
+      const button = document.querySelector(`button[onclick="toggleContent(${id})"]`);
+
+      if (subtitle.style.display === "none" || subtitle.style.display === "") {
+        subtitle.style.display = "block";
+        text.style.display = "block";
+        button.textContent = "Hide";
+      } else {
+        subtitle.style.display = "none";
+        text.style.display = "none";
+        button.textContent = "Show";
+      }
+    }
+  </script>
+</body>
+</html>

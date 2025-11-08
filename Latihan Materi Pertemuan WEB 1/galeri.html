@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Foto Thumbnail</title>
+    <link rel="stylesheet" href="stylegaleri.css">
+</head>
+<body>
+    <header>
+        <h1>Galeri Foto Thumbnail</h1>
+        <p>Tampilkan koleksi foto Anda dalam bentuk thumbnail yang menarik.</p>
+    </header>
+    
+    <nav>
+        <a href="index.html">Beranda</a>
+        <a href="#gallery">Galeri</a>
+        <a href="#about">Tentang</a>
+        <a href="#contact">Kontak</a>
+    </nav>
+    
+    <div class="container">
+        <h2 id="gallery">Koleksi Foto</h2>
+        <div class="gallery">
+            <img src="https://picsum.photos/1200/900?random=1" alt="Foto 1" class="thumbnail" data-index="0">
+            <img src="https://picsum.photos/1200/900?random=2" alt="Foto 2" class="thumbnail" data-index="1">
+            <img src="https://picsum.photos/1200/900?random=3" alt="Foto 3" class="thumbnail" data-index="2">
+            <img src="https://picsum.photos/1200/900?random=4" alt="Foto 4" class="thumbnail" data-index="3">
+            <img src="https://picsum.photos/1200/900?random=5" alt="Foto 5" class="thumbnail" data-index="4">
+            <img src="https://picsum.photos/1200/900?random=6" alt="Foto 6" class="thumbnail" data-index="5">
+            <img src="https://picsum.photos/1200/900?random=7" alt="Foto 7" class="thumbnail" data-index="6">
+            <img src="https://picsum.photos/1200/900?random=8" alt="Foto 8" class="thumbnail" data-index="7">
+            <img src="https://picsum.photos/1200/900?random=9" alt="Foto 9" class="thumbnail" data-index="8">
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Galeri Foto. Semua hak dilindungi.</p>
+    </footer>
+
+        <!-- Lightbox modal -->
+        <div class="lightbox" id="lightbox" aria-hidden="true">
+            <div class="lightbox-content" role="dialog" aria-modal="true">
+                <button class="close" id="lbClose" title="Tutup">✕</button>
+                <button class="prev" id="lbPrev" title="Sebelumnya">‹</button>
+                <div class="img-wrap">
+                    <img src="" alt="" id="lbImage">
+                    <div class="caption" id="lbCaption"></div>
+                </div>
+                <button class="next" id="lbNext" title="Berikutnya">›</button>
+            </div>
+        </div>
+
+        <script>
+            (function(){
+                const thumbnails = Array.from(document.querySelectorAll('.thumbnail'));
+                const lightbox = document.getElementById('lightbox');
+                const lbImage = document.getElementById('lbImage');
+                const lbCaption = document.getElementById('lbCaption');
+                const lbClose = document.getElementById('lbClose');
+                const lbPrev = document.getElementById('lbPrev');
+                const lbNext = document.getElementById('lbNext');
+                let currentIndex = 0;
+
+                function openLightbox(index){
+                    const img = thumbnails[index];
+                    if(!img) return;
+                    currentIndex = index;
+                    lbImage.src = img.src;
+                    lbImage.alt = img.alt || '';
+                    lbCaption.textContent = img.alt || '';
+                    lightbox.classList.add('open');
+                    document.documentElement.classList.add('no-scroll');
+                    lightbox.setAttribute('aria-hidden','false');
+                    // focus on close for accessibility
+                    lbClose.focus();
+                }
+
+                function closeLightbox(){
+                    lightbox.classList.remove('open');
+                    document.documentElement.classList.remove('no-scroll');
+                    lightbox.setAttribute('aria-hidden','true');
+                }
+
+                function showNext(){
+                    const next = (currentIndex + 1) % thumbnails.length;
+                    openLightbox(next);
+                }
+                function showPrev(){
+                    const prev = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
+                    openLightbox(prev);
+                }
+
+                thumbnails.forEach((tn, i) => {
+                    tn.addEventListener('click', () => openLightbox(i));
+                    // allow keyboard to open if focused
+                    tn.tabIndex = 0;
+                    tn.addEventListener('keydown', (e) => {
+                        if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(i); }
+                    });
+                });
+
+                lbClose.addEventListener('click', closeLightbox);
+                lbNext.addEventListener('click', showNext);
+                lbPrev.addEventListener('click', showPrev);
+
+                // close when clicking outside image
+                lightbox.addEventListener('click', (e) => {
+                    if(e.target === lightbox) closeLightbox();
+                });
+
+                // keyboard navigation
+                document.addEventListener('keydown', (e) => {
+                    if(lightbox.classList.contains('open')){
+                        if(e.key === 'ArrowRight') { showNext(); }
+                        else if(e.key === 'ArrowLeft') { showPrev(); }
+                        else if(e.key === 'Escape') { closeLightbox(); }
+                    }
+                });
+
+            })();
+        </script>
+</body>
+</html>

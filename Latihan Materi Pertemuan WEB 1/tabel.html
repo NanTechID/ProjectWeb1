@@ -1,0 +1,126 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styletb.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">NanTech.ID</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul id="nav-links">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="#">Tentang</a></li>
+      <li><a href="#">Data</a></li>
+      <li><a href="#">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Selamat Datang di Portal Mahasiswa</h1>
+    <p>Informasi data mahasiswa terbaru dan terpercaya</p>
+  </section>
+
+  <!-- Content Section -->
+  <div class="content">
+    <h2>Contoh Tabel Data Mahasiswa</h2>
+    <table>
+      <tr>
+        <th>No</th>
+        <th>Nama</th>
+        <th>NIM</th>
+        <th>Prodi</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Ahmad</td>
+        <td>231001</td>
+        <td>Informatika</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Siti</td>
+        <td>231002</td>
+        <td>Sistem Informasi</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Budi</td>
+        <td>231003</td>
+        <td>Teknik Komputer</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Rina</td>
+        <td>231004</td>
+        <td>Informatika</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Agus</td>
+        <td>231005</td>
+        <td>Sistem Informasi</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Dewi</td>
+        <td>231006</td>
+        <td>Teknik Komputer</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Fajar</td>
+        <td>231007</td>
+        <td>Informatika</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Lina</td>
+        <td>231008</td>
+        <td>Sistem Informasi</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Yusuf</td>
+        <td>231009</td>
+        <td>Teknik Komputer</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>Nina</td>
+        <td>231010</td>
+        <td>Informatika</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="Element-MM">
+    <h2>Contoh Audio dan Video</h2>
+
+    <audio controls>
+      <source src="lagu.mp3" type="audio/mpeg">
+      Browser Anda tidak mendukung elemen audio.
+    </audio>
+
+    <video width="400" controls>
+      <source src="video.mp4" type="video/mp4">
+      Browser Anda tidak mendukung elemen video.
+    </video>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('nav-links');
+      navLinks.classList.toggle('show');
+    }
+  </script>
+
+</body>
+ <footer>
+        <p>&copy; 2025 Website. Semua hak dilindungi.</p>
+    </footer>
+</html>
